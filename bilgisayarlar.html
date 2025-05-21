@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bilgisayarlar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="tum-urunler.css" />
+  <link rel="stylesheet" href="bilgisayarlar.css" />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', JSON.stringify([]));
+      }
+      updateCartUI();
+    });
+  </script>
+</head>
+<body>
+  <header id="header">
+    <div class="header-top">
+      <div class="wrapper">
+        <h3>Dünya çapında KaçakYol'a hoş geldiniz!</h3>
+        <div class="links">
+          <div><img src="img/header-top/Location.svg" alt=""><p>Van<span>/Tuşba</span></p></div>
+          <div><img src="img/header-top/iconoir_delivery-truck.svg" alt=""><p>Siparişinizi Takip Edin</p></div>
+          <div><img src="img/header-top/Discount.svg" alt=""><p>Tüm Teklifler</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="header-logo">
+      <div class="wrapper">
+        <div class="logo">
+          <img src="img/logo.svg" alt="">
+          <img src="img/kacakyol_logo.svg" alt="">
+        </div>
+        <div class="right">
+          <div class="search">
+            <img src="img/Search.svg" alt="">
+            <input type="search" placeholder="Aradığınız ürün,kategori veya markayı yazınız">
+            <div class="category-dropdown">
+                <img src="img/list.svg" alt="" class="dropdown-trigger">
+                <div class="dropdown-content">
+                    <a href="bilgisayarlar.html">Bilgisayarlar</a>
+                    <a href="telefonlar.html">Telefonlar</a>
+                    <a href="saatler.html">Akıllı Saatler</a>
+                </div>
+            </div>
+          </div>
+          <div class="form">
+            <div><img src="img/user.svg" alt=""><a href="javascript:void(0)">Giriş Yap/Kayıt Ol</a></div>
+            <div><img src="img/Buy.svg" alt=""><a href="#" id="cartLink">Sepet</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <h1 style="margin-top: 40px; font-size: 32px; color: #008ECC;">BİLGİSAYARLAR</h1>
+
+    <div class="urunler-grid">
+      <!-- ÜRÜN 1 -->
+      <div class="box" data-id="1">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/macbook.png" alt="MacBook Pro M3" />
+          <p>26% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>MacBook Pro M3</h4>
+          <p><span class="new-price">18.000 TL</span> <span class="old-price">20.000 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 2.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 2 -->
+      <div class="box" data-id="2">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/dell.png" alt="Dell XPS 15" />
+          <p>53% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>Dell XPS 15</h4>
+          <p><span class="new-price">10.499 TL</span> <span class="old-price">24.000 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 13.501 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 3 -->
+      <div class="box" data-id="3">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/lenovo.png" alt="Lenovo ThinkPad X1" />
+          <p>50% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>Lenovo ThinkPad X1</h4>
+          <p><span class="new-price">16.999 TL</span> <span class="old-price">24.999 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 8.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 4 -->
+      <div class="box" data-id="4">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/hp.png" alt="HP Spectre x360" />
+          <p>30% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>HP Spectre x360</h4>
+          <p><span class="new-price">31.999 TL</span> <span class="old-price">40.999 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 9.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 5 -->
+      <div class="box" data-id="5">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/asus.png" alt="ASUS ROG Zephyrus" />
+          <p>60% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>ASUS ROG Zephyrus</h4>
+          <p><span class="new-price">67.999 TL</span> <span class="old-price">85.999 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 18.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 6 -->
+      <div class="box" data-id="6">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/msi.png" alt="MSI GS66 Stealth" />
+          <p>26% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>MSI GS66 Stealth</h4>
+          <p><span class="new-price">18.000 TL</span> <span class="old-price">20.000 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 2.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 7 -->
+      <div class="box" data-id="7">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/razer.png" alt="Razer Blade 15" />
+          <p>53% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>Razer Blade 15</h4>
+          <p><span class="new-price">10.499 TL</span> <span class="old-price">24.000 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 13.501 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 8 -->
+      <div class="box" data-id="8">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/acer.png" alt="Acer Predator Helios" />
+          <p>50% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>Acer Predator Helios</h4>
+          <p><span class="new-price">16.999 TL</span> <span class="old-price">24.999 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 8.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 9 -->
+      <div class="box" data-id="9">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/alienware.png" alt="Alienware x17" />
+          <p>30% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>Alienware x17</h4>
+          <p><span class="new-price">31.999 TL</span> <span class="old-price">40.999 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 9.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- ÜRÜN 10 -->
+      <div class="box" data-id="10">
+        <div class="box-top">
+          <img src="img/bilgisayarlar/gigabyte.png" alt="Gigabyte Aorus 15" />
+          <p>60% İndirim</p>
+        </div>
+        <div class="box-bottom">
+          <h4>Gigabyte Aorus 15</h4>
+          <p><span class="new-price">67.999 TL</span> <span class="old-price">85.999 TL</span></p>
+          <hr>
+          <h3 class="green-price">İndirim - 18.000 TL</h3>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giriş/Kayıt Modalı -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="login">Giriş Yap</button>
+        <button class="tab-btn" data-tab="register">Kayıt Ol</button>
+      </div>
+      
+      <!-- Giriş Formu -->
+      <div id="login" class="tab-content active">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">E-posta</label>
+            <input type="email" id="loginEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Şifre</label>
+            <input type="password" id="loginPassword" required>
+          </div>
+          <div class="form-options">
+            <label>
+              <input type="checkbox"> Beni Hatırla
+            </label>
+            <a href="#" class="forgot-password">Şifremi Unuttum</a>
+          </div>
+          <button type="submit" class="auth-btn">Giriş Yap</button>
+        </form>
+      </div>
+      
+      <!-- Kayıt Formu -->
+      <div id="register" class="tab-content">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Ad Soyad</label>
+            <input type="text" id="registerName" required>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">E-posta</label>
+            <input type="email" id="registerEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Şifre</label>
+            <input type="password" id="registerPassword" required>
+          </div>
+          <div class="form-group">
+            <label for="registerConfirmPassword">Şifre Tekrar</label>
+            <input type="password" id="registerConfirmPassword" required>
+          </div>
+          <div class="form-agreement">
+            <label>
+              <input type="checkbox" required> 
+              <a href="#">Kullanıcı sözleşmesini</a> okudum ve kabul ediyorum.
+            </label>
+          </div>
+          <button type="submit" class="auth-btn">Kayıt Ol</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sepet Modalı -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close-cart">&times;</span>
+      <h2>Alışveriş Sepetim</h2>
+      <div class="cart-items">
+        <!-- Sepet öğeleri buraya dinamik olarak eklenecek -->
+      </div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Ara Toplam:</span>
+          <span class="cart-subtotal">0 TL</span>
+        </div>
+        <div class="summary-row">
+          <span>Kargo:</span>
+          <span class="cart-shipping">Ücretsiz</span>
+        </div>
+        <div class="summary-row total">
+          <span>Toplam:</span>
+          <span class="cart-total">0 TL</span>
+        </div>
+        <button class="checkout-btn">ÖDEME YAP</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="tum-urunler.js"></script>
+  <script src="bilgisayarlar.js"></script>
+</body>
+</html> 
